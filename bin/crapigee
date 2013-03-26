@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+var crapigee = require('../');
+
+program
+  .version("0.0.1")
+  .option('-u --url [url]', 'Specify a URL to hit')
+  .option('-a --auth [auth]', 'Specify an Authentication header')
+  .option('-t --times [times]', 'Specify the number of requests to send', parseInt)
+  .option('-p --parallel', 'Specify send requests in parallel')
+  .parse(process.argv)
+
+if (!program.times) {
+  throw "Missing -t argument"
+}
+if (!program.url) {
+  throw "Missing -u argument"
+}
+
+var opt = {
+  times: program.times,
+  url: program.url,
+  token: program.auth,
+  parallel: program.parallel
+};
+crapigee.break(opt, function(err){
+  if(err){
+    console.log(err);
+  }
+  console.log("Completed!");
+});

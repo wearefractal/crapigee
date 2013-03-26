@@ -1,14 +1,12 @@
-![status](https://secure.travis-ci.org/wearefractal/APPNAME.png?branch=master)
-
 ## Information
 
 <table>
 <tr> 
-<td>Package</td><td>APPNAME</td>
+<td>Package</td><td>crapigee</td>
 </tr>
 <tr>
 <td>Description</td>
-<td>NOTHING HERE YET</td>
+<td>Simple HTTP flooding</td>
 </tr>
 <tr>
 <td>Node Version</td>
@@ -18,13 +16,18 @@
 
 ## Usage
 
-```coffee-script
-NOTHING HERE YET
 ```
+  Usage: crapigee [options]
 
-## Examples
+  Options:
 
-You can view more examples in the [example folder.](https://github.com/wearefractal/APPNAME/tree/master/examples)
+    -h, --help          output usage information
+    -V, --version       output the version number
+    -u --url [url]      Specify a URL to hit
+    -a --auth [auth]    Specify an Authentication header
+    -t --times [times]  Specify the number of requests to send
+    -p --parallel       Specify send requests in parallel
+```
 
 ## LICENSE
 
